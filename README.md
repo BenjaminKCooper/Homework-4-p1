@@ -1,1 +1,1 @@
-# js-starter with react
+# Blog HW Part 1!
