@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Welcome from './welcome';
 import NavBar from './navbar';
+import Link from 'react-router';
 
 // example class based component (smart component)
 class App extends Component {
@@ -15,8 +16,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Welcome />
-        <NavBar />
+        <Link to="/">your site name</Link>
+        <Link to="posts/new">new post</Link>
       </div>
     );
   }

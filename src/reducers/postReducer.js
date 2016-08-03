@@ -1,6 +1,6 @@
 import { ActionTypes } from '../actions';
 
-const CountReducer = (state = 0, action) => {
+const postsReducer = (state = { all: [], post: null }, action) => {
   switch (action.type) {
     case ActionTypes.INCREMENT:
       return state + 1;
@@ -11,4 +11,4 @@ const CountReducer = (state = 0, action) => {
   }
 };
 
-export default CountReducer;
+export default postsReducer;
