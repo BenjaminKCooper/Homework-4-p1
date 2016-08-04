@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-import Welcome from './welcome';
-import NavBar from './navbar';
 import Link from 'react-router';
 
 // example class based component (smart component)
-class App extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
 
@@ -23,4 +21,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default NavBar;

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Welcome from './welcome';
-import NavBar from './navbar';
-import Link from 'react-router';
+// import marked from 'marked';
 
 // example class based component (smart component)
-class App extends Component {
+class New extends Component {
   constructor(props) {
     super(props);
 
@@ -13,14 +12,18 @@ class App extends Component {
     this.state = {};
   }
 
+
+  onTextChange() {
+
+  }
+
   render() {
     return (
       <div>
-        <Link to="/">your site name</Link>
-        <Link to="posts/new">new post</Link>
+        <input onChange={this.onTextChange} />
       </div>
     );
   }
 }
 
-export default App;
+export default connect(mapStateToProps, null)(New);

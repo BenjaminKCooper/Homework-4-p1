@@ -11,12 +11,6 @@ module.exports = {
     publicPath: 'build/',
     filename: 'bundle.js',
   },
-  devServer: {
-  port: 8080,
-  historyApiFallback: {
-    index: 'index.html',
-  },
-},
   module: {
     loaders: [{
       test: /\.js$/,
@@ -34,5 +28,12 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('bundle.css'),
   ],
+  devServer: {
+    port: 8080,
+    historyApiFallback: {
+      index: 'index.html',
+    },
+  },
+
 
 };
