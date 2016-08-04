@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBar from '../components/navbar';
+import NavBar from './navbar';
 
 // example class based component (smart component)
 const App = (props) => {
