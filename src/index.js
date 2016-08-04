@@ -6,7 +6,7 @@ import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 import thunk from 'redux-thunk';
 
-// import './style.scss';
+import './style.scss';
 
 import reducers from './reducers';
 

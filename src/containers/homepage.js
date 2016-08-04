@@ -27,7 +27,7 @@ class Homepage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="test">
         {this.renderPosts()}
       </div>
     );

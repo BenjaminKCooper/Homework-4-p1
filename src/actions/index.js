@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
 const API_KEY = '?key=benjamin_cooper';
+import { browserHistory } from 'react-router';
 
 
 export const ActionTypes = {
@@ -16,7 +17,7 @@ export const ActionTypes = {
 export function fetchpost(id) {
 // axios get
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/posts${API_KEY}`, id).then(response => {
+    axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`).then(response => {
       dispatch({ type: ActionTypes.FETCH_POST, payload: response.data });
     }).catch(error => {
       console.log(error);
@@ -45,7 +46,13 @@ export function fetchposts() {
 }
 
 export function createPost(thePost) {
-  console.log('works');
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/posts${API_KEY}`, thePost).then(response => {
+      dispatch({ type: ActionTypes.CREATE_POST, payload: response.data });
+    }).catch(error => {
+      console.log(error);
+    });
+  };
   // const fields = { title: thePost.title, contents: thePost.content, tags: thePost.tags };
   // axios.post(`${ROOT_URL}/posts${API_KEY}`, fields).then(response => {
   //   return (dispatch) => {
@@ -58,23 +65,39 @@ export function createPost(thePost) {
 
 
 export function updatePost(thePost) {
-  const fields = { title: thePost.title, contents: thePost.content, tags: thePost.tags };
-  axios.put(`${ROOT_URL}/posts${API_KEY}`, fields).then(response => {
-    return (dispatch) => {
+  // const fields = { title: thePost.title, contents: thePost.content, tags: thePost.tags };
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/posts/${thePost._id}${API_KEY}`, thePost).then(response => {
       dispatch({ type: ActionTypes.UPDATE_POST, payload: response.data });
-    };
-  }).catch(error => {
-    console.log('error');
-  });
+    }).catch(error => {
+      console.log('error');
+    });
+  // axios.put(`${ROOT_URL}/posts${API_KEY}`, fields).then(response => {
+  //   return (dispatch) => {
+  //     dispatch({ type: ActionTypes.UPDATE_POST, payload: response.data });
+  //   };
+  // }).catch(error => {
+  //   console.log('error');
+  // });
+  };
 }
 
 
 export function deletePost(id) {
-  axios.delete(`${ROOT_URL}/posts${API_KEY}`, id).then(response => {
-    return (dispatch) => {
+  return (dispatch) => {
+    axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`).then(response => {
       dispatch({ type: ActionTypes.DELETE_POST, payload: response.data });
-    };
-  }).catch(error => {
-    console.log('error');
-  });
+    }, browserHistory.push('/')).catch(error => {
+      console.log(error);
+    });
+  };
+
+
+  // axios.delete(`${ROOT_URL}/posts${API_KEY}`, id).then(response => {
+  //   return (dispatch) => {
+  //     dispatch({ type: ActionTypes.DELETE_POST, payload: response.data });
+  //   };
+  // }).catch(error => {
+  //   console.log('error');
+  // });
 }
