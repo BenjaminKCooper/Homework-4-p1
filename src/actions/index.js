@@ -64,10 +64,11 @@ export function createPost(thePost) {
 }
 
 
-export function updatePost(thePost) {
+export function updatePost(id, newPost) {
+  console.log('FROM ACTIONS: ' + newPost);
   // const fields = { title: thePost.title, contents: thePost.content, tags: thePost.tags };
   return (dispatch) => {
-    axios.put(`${ROOT_URL}/posts/${thePost._id}${API_KEY}`, thePost).then(response => {
+    axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, newPost).then(response => {
       dispatch({ type: ActionTypes.UPDATE_POST, payload: response.data });
     }).catch(error => {
       console.log('error');

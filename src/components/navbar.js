@@ -11,7 +11,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="topBarHome">
         <Link to="/">BenBlog</Link>
         <Link to="posts/new">new post</Link>
       </div>

@@ -21,15 +21,17 @@ class Homepage extends Component {
 
   renderPosts() {
     return this.props.posts.map((post) => {
-      return <Link to={`/posts/${post.id}`} key={post.id}>{post.title}</Link>;
+      return <Link className="postContainer"to={`/posts/${post.id}`} key={post.id}><div className="linkText">{post.title} </div></Link>;
     });
   }
 
   render() {
     return (
-      <div className="test">
-        {this.renderPosts()}
-      </div>
+      <div className="mainPageCenter">
+        <div >
+          {this.renderPosts()}
+        </div>
+      </div >
     );
   }
 }

@@ -42,11 +42,11 @@ class New extends Component {
 
   render() {
     return (
-      <div>
-        <input onChange={this.onTitleChange} />
-        <input onChange={this.onTagsChange} />
-        <input onChange={this.onContentChange} />
-        <button onClick={this.onButtonPress} />
+      <div className="postContainer">
+        <input placeholder="Title" onChange={this.onTitleChange} />
+        <input placeholder="Tags" onChange={this.onTagsChange} />
+        <input placeholder="Content" onChange={this.onContentChange} />
+        <button onClick={this.onButtonPress}>Create New Post</button>
       </div>
     );
   }

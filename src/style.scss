@@ -2,5 +2,84 @@ body {
   font-family: "Roboto", sans-serif;
   color: rgb(10%, 10%, 10%);
   background: darken(white, 10%);
-  margin: 50px;
+  margin: auto;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-top: 9px;
+  border: 0;
+  cursor: grab;
+  border-radius: 5px;
+}
+
+.mainApp{
+  height: inherit;
+  display: flex;
+  background: green;
+  flex-direction: column;
+  justify-content: center;
+  // justify-content: space-between;
+}
+
+.topBarHome{
+  display: flex;
+  background: red;
+  justify-content: space-around;
+}
+
+.mainPageCenter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+// http://www.w3schools.com/css/css_link.asp
+.postContainer{
+  display: flex;
+  flex-direction: row;
+  background: blue;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 30px;
+
+  text-decoration: none;
+  justify-content: center;
+}
+
+.linkText{
+  color: white;
+  text-decoration: none;
+  font-size: 38px;
+}
+
+.bottomBar{
+  background: purple;
+  justify-content: flex-end;
+
+}
+.test{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.navBarContainer {
+  justify-content: flex-start;
+}
+
+
+.editMain{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.subEditArea{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 2px;
+  margin: 30px;
 }
