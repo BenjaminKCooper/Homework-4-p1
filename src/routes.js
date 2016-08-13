@@ -5,6 +5,8 @@ import New from './containers/new';
 import App from './components/app';
 import Show from './containers/show_edit';
 import Homepage from './containers/homepage';
+import SignIn from './containers/signin';
+import SignUp from './containers/signup';
 
 export default(
   <Route path="/" component={App}>
